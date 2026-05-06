@@ -27,9 +27,8 @@ public class HealthComponent : MonoBehaviour
 
     private void newCoinAmount(float newCoinAmount, float amountChanged)
     {
-        if (!invincibility)
+        if (!invincibility && newCoinAmount == tradeCoin)
         {
-            (newCoinAmount) = tradeCoin;
             AddHealth(tradeHealth);
             coinComponent.RemoveCoin(tradeCoin);
             invincibility = true;

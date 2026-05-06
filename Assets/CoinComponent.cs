@@ -18,9 +18,9 @@ public class CoinComponent : MonoBehaviour {
     }
     public void AddCoin(float amount)
     {
+        Debug.Log(amount);
         currentCoinAmount += amount;
         newCoinAmount?.Invoke(currentCoinAmount, amount);
-        //Debug.Log(currentCoinAmount);
     }
     public void RemoveCoin(float amount)
     {
