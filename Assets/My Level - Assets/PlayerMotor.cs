@@ -12,15 +12,21 @@ public class PlayerMotor : MonoBehaviour
     public float jumpForce = 5;
     public float enemyHitForce = 50;
     private Rigidbody2D _rigidbody2D;
+    private Animator _animator;
     private bool _canJump = true;
+    private float initialScale;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        initialScale = transform.localScale.x;
     }
     // Update is called once per frame
     private void FixedUpdate()
     {
+        _animator.SetFloat("SpeedY", _rigidbody2D.linearVelocityY);
         MovePlayer();
         LimitMaxSpeed();
     }
@@ -44,6 +50,15 @@ public class PlayerMotor : MonoBehaviour
         if (direction.x != 0)
         {
             _rigidbody2D.AddForce(new Vector2(direction.x * acceleration, 0));
+            _animator.SetBool("IsMoving", true);
+            if (direction.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(initialScale, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-initialScale, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+            }
         }
         //if not accelerating start slowing down
         else if (_rigidbody2D.linearVelocityX != 0)
@@ -59,6 +74,11 @@ public class PlayerMotor : MonoBehaviour
                 _rigidbody2D.AddForce(new Vector2(-_rigidbody2D.linearVelocityX * stoppingForce, 0));
             }
         }
+
+        if (direction.x == 0)
+        {
+            _animator.SetBool("IsMoving", false);
+        }
     }
 
     private void OnMove(InputValue value)
@@ -71,13 +91,25 @@ public class PlayerMotor : MonoBehaviour
         if (_canJump)
         {
             _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            _canJump = false;
+            //_canJump = false;
+            //_animator.SetTrigger("IsJumping");
+            //currentJumps++;
+            //if(currentJumps >= maxJump)
+            //{
+            //    _animator.SetTrigger("DoubleJump");
+            //    _canJump = false;
+            //}
+            
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         _canJump = true;
+        //currentJumps = 0;
+        //_animator.ResetTrigger("Jump");
+        //    _animator.SetTrigger("DoubleJump");
+        //_animator.ResetTrigger("GroundHit");
     }
 
     private void OnHealthChanged(int oldHealth, int amountChanged, Vector3 origin)
