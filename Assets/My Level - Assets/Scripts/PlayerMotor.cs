@@ -11,6 +11,8 @@ public class PlayerMotor : MonoBehaviour
     public float stoppingPoint = 0.1f;
     public float jumpForce = 5;
     public float enemyHitForce = 50;
+    //public float maxJump = 11;
+    //private float currentJumps = jumpForce;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private bool _canJump = true;
@@ -91,7 +93,11 @@ public class PlayerMotor : MonoBehaviour
         if (_canJump)
         {
             _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            //_canJump = false;
+            //    if(_rigidbody2D.linearVelocity = new Vector2(0.0f, _rigidbody2D.linearVelocityY); >= maxJump)
+            //    
+            //Debug.Log(currentJumps);
+            // _canJump = false;
+             //_animator.SetTrigger("DoubleJump");
             //_animator.SetTrigger("IsJumping");
             //currentJumps++;
             //if(currentJumps >= maxJump)

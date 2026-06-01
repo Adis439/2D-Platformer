@@ -5,9 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/My Level - Assets/Canvas/WelcomeScreen.unity
+    guid: 4d804a654c673d8459eff168274f4ebe
+  - enabled: 1
+    path: Assets/My Level - Assets/Canvas/EndGameScene.unity
+    guid: c1949a0f7e3e4c247abfd14a7843c642
+  - enabled: 1
+    path: Assets/My Level - Assets/Canvas/EndScreen.unity
+    guid: c84b8c6e57b51e345af41bc5fa28aa94
+  - enabled: 1
+    path: Assets/My Level - Assets/Levels/Level 1.unity
+    guid: f22b373b065c1b7469eaa3c04ba86d42
+  - enabled: 1
+    path: Assets/My Level - Assets/Levels/Level 2.unity
+    guid: f535af7575498604586a0863f632c24d
+  - enabled: 1
+    path: Assets/My Level - Assets/Levels/Level 3.unity
+    guid: 7f44fd35ddfc4224c840c1f8573a3f79
+  - enabled: 1
+    path: Assets/My Level - Assets/Levels/Level 4.unity
+    guid: e5e8d9252baa1894e9d6e57789bf18b0
+  - enabled: 1
+    path: Assets/My Level - Assets/Levels/Level 5.unity
+    guid: eedcea6e770a2224f85f4ee475593a7c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

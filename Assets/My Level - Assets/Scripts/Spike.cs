@@ -19,5 +19,6 @@ public class Spike : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.GetComponent<HealthComponent>().ReceiveDamage(damage);
+        Destroy(gameObject);
     }
 }
