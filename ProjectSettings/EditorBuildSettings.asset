@@ -33,5 +33,7 @@ EditorBuildSettings:
     path: Assets/My Level - Assets/Levels/Level 5.unity
     guid: eedcea6e770a2224f85f4ee475593a7c
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: c2a31aa0b4fb08146b3a59184ec23556, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 7f16f8d26d820f64ea090d6aa788da9c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

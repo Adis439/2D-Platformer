@@ -42,7 +42,7 @@ public class HealthComponent : MonoBehaviour
         {
             currentHealth -= amount;
             OnHealthChanged?.Invoke(currentHealth, amount);
-            invincibility = true;
+            invincibility = false;
             StartCoroutine(ResetInvincibility(3));
         }
 
